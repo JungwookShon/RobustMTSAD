@@ -1,35 +1,21 @@
 # RobustMTSAD
 Toward a robust approach to multivariate time series anomaly detection
 
-# Usage
-
-# Anomaly-Transformer (ICLR 2022 Spotlight)
-Anomaly Transformer: Time Series Anomaly Detection with Association Discrepancy
-
-Unsupervised detection of anomaly points in time series is a challenging problem, which requires the model to learn informative representation and derive a distinguishable criterion. In this paper, we propose the Anomaly Transformer in these three folds:
-
-- An inherent distinguishable criterion as **Association Discrepancy** for detection.
-- A new **Anomaly-Attention** mechanism to compute the association discrepancy.
-- A **minimax strategy** to amplify the normal-abnormal distinguishability of the association discrepancy.
-
-<p align="center">
-<img src=".\pics\structure.png" height = "350" alt="" align=center />
-</p>
-
-## Get Started
-
-1. Install Python 3.6, PyTorch >= 1.4.0. 
-(Thanks Élise for the contribution in solving the environment. See this [issue](https://github.com/thuml/Anomaly-Transformer/issues/11) for details.)
-2. Download data. You can obtain four benchmarks from [Google Cloud](https://drive.google.com/drive/folders/1gisthCoE-RrKJ0j3KPV7xiibhHWT9qRm?usp=sharing). **All the datasets are well pre-processed**. For the SWaT dataset, you can apply for it by following its official tutorial.
-3. Train and evaluate. We provide the experiment scripts of all benchmarks under the folder `./scripts`. You can reproduce the experiment results as follows:
+## Usage
+1. Install Python 3.6 or higher.
+2. Install library.
+```bash
+pip install -r requirements.txt
+```
+3. Download dataset. This example is based on SMD dataset.
+4. Run normalization.
+```bash
+python preprocess_AggZNorm_SMD.py
+```
+4. Train and evaluate. 
 ```bash
 bash ./scripts/SMD.sh
-bash ./scripts/MSL.sh
-bash ./scripts/SMAP.sh
-bash ./scripts/PSM.sh
 ```
-
-Especially, we use the adjustment operation proposed by [Xu et al, 2018](https://arxiv.org/pdf/1802.03903.pdf) for model evaluation. If you have questions about this, please see this [issue](https://github.com/thuml/Anomaly-Transformer/issues/14) or email us.
 
 ## Main Result
 
